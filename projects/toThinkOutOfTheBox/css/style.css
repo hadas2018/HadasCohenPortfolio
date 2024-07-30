@@ -1,0 +1,168 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Heebo", sans-serif;
+}
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+.header-area {
+  background-color: white;
+  padding: 20px;
+  box-shadow: inset 0px 0px 10px 12px rgb(14, 225, 225);
+}
+h1 {
+  font-size: 60px;
+  font-weight: 900;
+}
+p {
+  font-size: 20px;
+}
+.whatsapp-link {
+  background-color: #25d366;
+  color: white;
+}
+.whatsapp-link:hover {
+  background-color: rgb(18, 140, 126);
+  color: white;
+}
+
+.card-gif {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.feature-box {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.styletextcard h5 {
+  font-size: 30px;
+  color: #0ee1e1;
+  font-weight: 700;
+}
+
+.boxcard {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.stylebtn {
+  background-color: #95ffff;
+  border: none;
+  color: black;
+}
+.map {
+  background-color: rgba(51, 204, 204, 0.647);
+  padding: 20px;
+}
+.map img {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+.bgform {
+  background-color: #f0ffff;
+}
+.bgform h2 {
+  font-size: 46px;
+  font-weight: 900;
+}
+.stylefrom input {
+  background-color: #e5eeff;
+  border-bottom: 4px solid #1ae0ec;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+.stylefrom textarea {
+  background-color: #e5eeff;
+  border-bottom: 4px solid #1ae0ec;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+.bgicon {
+  width: 40px;
+  height: 40px;
+  background-color: #0ee1e1;
+  border-radius: 50%;
+  color: #000000;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+}
+.social-icons a i:hover {
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+ 
+
+}
+#hr {
+  margin-top: 5px;
+  border-top: 18px solid #0ee1e1;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .styletextcard h5 {
+    font-size: 24px;
+  }
+  .bgform h2 {
+    font-size: 36px;
+  }
+  .header-area {
+    padding: 10px;
+  }
+  .whatsapp-link {
+    margin-top: 10px;
+  }
+  .header-image {
+    width: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .styletextcard h5 {
+    font-size: 20px;
+  }
+  .bgform h2 {
+    font-size: 28px;
+  }
+  .header-area {
+    padding: 5px;
+  }
+  .header-image {
+    width: 100px;
+  }
+  /* .header-area img{
+    max-width: 20px;
+    
+  } */
+}

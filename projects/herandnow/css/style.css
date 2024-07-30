@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Varela+Round&display=swap");
+body,
+html {
+  font-size: 1px;
+  height: 100%;
+  margin: 0;
+  font-family: "Satisfy", cursive;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #281eff, #2dff8c);
+  background: -moz-linear-gradient(to bottom, #281eff, #2dff8c);
+  background: -webkit-linear-gradient(to bottom, #281eff, #2dff8c);
+  background: -o-repeating-linear-gradient(to bottom, #281eff, #2dff8c);
+  text-align: center;
+  padding: 20px;
+}
+form {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+h1 {
+  font-weight: normal;
+  color: white;
+  font-size: 160rem;
+  margin: 0;
+  text-shadow: 0px 0px 36px #00000087;
+}
+h2 {
+  font-family: "Varela Round", sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 32rem;
+  margin: 0;
+}
+p {
+  font-family: "Varela Round", sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 16rem;
+  margin-bottom: 2rem;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1028rem;
+  margin: 50rem;
+}
+.field-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 16rem;
+  width: 100%;
+}
+input[type="text"],
+input[type="email"],
+button {
+  padding: 10rem;
+  margin: 0;
+  font-size: 16rem;
+  background-color: #f6f6f624;
+}
+input[type="text"],
+input[type="email"] {
+  border: 1px solid white;
+  border-radius: 1px;
+  box-sizing: border-box;
+  height: 40rem;
+}
+/* עובי, סגון וצבע המתאר במצב נגישות/פוקוס */
+input:focus {
+  outline: 3px solid white;
+}
+button {
+  font-family: "Varela Round", sans-serif;
+  background-color: white;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 1px;
+  width: 300px;
+}
+/*עובי, סגון וצבע המתאר במצב נגישות*/
+button:focus {
+  outline: 3px solid #281eff;
+}
+
+label {
+  font-family: "Varela Round", sans-serif;
+  color: white;
+  margin-bottom: 5rem;
+  text-align: right;
+}
+button:hover {
+  background: linear-gradient(to bottom, #281eff, #2dff8c);
+  background: -moz-linear-gradient(to bottom, #281eff, #2dff8c);
+  background: -webkit-linear-gradient(to bottom, #281eff, #2dff8c);
+  background: -o-repeating-linear-gradient(to bottom, #281eff, #2dff8c);
+  color: white;
+}
+input:hover {
+  border-width: 3px;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(40, 30, 255, 1) 0%,
+    rgba(30, 255, 150, 1) 60%
+  );
+  
+}
+@media (max-width: 1200px) {
+  .search-container {
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 80rem;
+  }
+  button {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 60rem;
+  }
+  p {
+    font-size: 16rem;
+  }
+  h2 {
+    font-size: 18rem;
+  }
+  button {
+    width: 100%;
+  }
+}

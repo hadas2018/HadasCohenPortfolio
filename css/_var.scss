@@ -1,0 +1,40 @@
+// צבעי המותג
+$motag1: #b13c7e;
+$motag2: #f88e43;
+$motag3: #dc4e60;
+$motag4: #b224bd;
+$motag5: #562984;
+$section1: #f8f8f8;
+
+$gradi: linear-gradient(345deg, #b13c7e, #f88e43, #562984);
+$gardisakof: linear-gradient(
+  to right,
+  rgba(177, 60, 126, 0.5),
+  rgba(248, 142, 67, 0.5),
+  rgba(87, 41, 132, 0.5)
+);
+
+@mixin btn-primary1 {
+  position: relative;
+  width: auto;
+  color: white;
+  padding-left: 2.5rem;
+  background-color: $motag2;
+  border-radius: 15px 0px 15px 0px;
+  border: none;
+}
+
+@mixin btn-primary1Hover {
+  background-color: $motag1;
+}
+
+@mixin btn-primary1After {
+  content: "\f060";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
