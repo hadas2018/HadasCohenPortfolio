@@ -205,20 +205,43 @@ p {
   background-size: 40%;
   padding: 80px 20px;
 }
+.formm {
+  color: white;
+}
+// button {
+//   border: none;
+//   background-color: $motag2;
+//   font-size: 25px;
+//   padding: 0 47px;
+//   border-radius: 25px;
+//   transition: opacity 1s, border-radius 5s, background-color 1000ms linear;
+// }
+
 button {
+  background-color: #f88e43;
+  color: white;
+  font-size: 20px;
+  padding: 10px 47px;
   border: none;
-  background-color: $motag2;
-  font-size: 25px;
-  padding: 0 47px;
   border-radius: 25px;
-  transition: opacity 1s, border-radius 5s, background-color 1000ms linear;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: black;
-  border: 1px solid $motag1;
-  color: $motag2;
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
+input:focus, textarea:focus {
+  outline: none;
+  border-bottom-color: #b13c7e;
+}
+
+// button:hover {
+//   background-color: black;
+//   border: 1px solid $motag1;
+//   color: $motag2;
+// }
 
 form {
   width: 500px;
@@ -229,12 +252,30 @@ label {
   margin-bottom: 5px;
 }
 
+.error-message {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: -0.5px;
+  display: block;
+}
+input.error, textarea.error {
+  border-bottom-color: #ff4444;
+}
+.form-control {
+  position: relative;
+  margin-bottom: 5px;
+}
+
 input,
 textarea {
   width: 100%;
   padding: 10px;
   border-bottom: 4px solid $motag2;
   margin-bottom: 20px;
+}
+textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 .iconcontactus {
