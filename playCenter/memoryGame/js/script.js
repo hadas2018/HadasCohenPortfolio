@@ -189,7 +189,7 @@ class PokemonMemoryGame extends MemoryGame {
     // אתחול טיימר
     this.timer = new HourglassTimer();
 
-    this.startGameButton.addEventListener("click", () => this.initGame());
+    this.startGameButton.addEventListener("click", this.initGame.bind(this));
   }
 
   async initGame() {
