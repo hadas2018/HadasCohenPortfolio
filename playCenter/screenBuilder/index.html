@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <title>בונה מסכים</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- הוספת הפונטים מגוגל -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Heebo:wght@400;700&family=Assistant:wght@400;700&family=Secular+One&family=Suez+One&family=Varela+Round&family=Karantina&family=Miriam+Libre:wght@400;700&family=Open+Sans:wght@400;700&family=David+Libre:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="main-title" id="pageTitle">בונה מסך</h1>
+    </header>
+
+    <nav class="preview-controls">
+      <button id="togglePreview" class="btn btn-primary">תצוגה מקדימה</button>
+
+      <button id="saveButton" class="btn btn-success">
+        <span>💾</span> שמור
+      </button>
+
+      <button id="loadButton" class="btn btn-info">
+        <span>📂</span> טען גרסה
+      </button>
+    </nav>
+
+    <aside class="toolbar">
+      <h5 id="toolbarTitle" class="mb-3">רכיבים זמינים</h5>
+      <p id="dragInstructions">גרור ושחרר</p>
+
+      <div class="components-list">
+        <div class="draggable" draggable="true" data-type="heading">
+          <i class="bi bi-type-h1"></i> כותרת
+        </div>
+
+        <div class="draggable" draggable="true" data-type="text">
+          <i class="bi bi-text-paragraph"></i> טקסט
+        </div>
+
+        <div class="draggable" draggable="true" data-type="button">
+          <i class="bi bi-box"></i> כפתור
+        </div>
+
+        <div class="draggable" draggable="true" data-type="input">
+          <i class="bi bi-input-cursor"></i> שדה קלט
+        </div>
+
+        <div class="draggable" draggable="true" data-type="image">
+          <i class="bi bi-image"></i> תמונה
+        </div>
+      </div>
+    </aside>
+
+    <main class="canvas">
+      <div class="drop-zone"></div>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

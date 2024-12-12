@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>משחק איקס עיגול צ'יטוס</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+      <div class="mascot-container">
+        <img src="Images/zita.png" alt="Zita" class="mascot-img" />
+      </div>
+
+      <div class="container">
+      <div class="text-center mb-4">
+        <h1 class="game-title">
+            <img src="Images/cheetos.png" alt="cheetosLogo" class="title-logo" style="height: 50px; vertical-align: middle; display: inline-block;"> 
+            איקס עיגול
+        </h1>
+        <div class="score-board">
+          <div class="score-item">
+            <img src="Images/cheatosX.png" alt="X" />
+            <span id="score-x">0</span>
+            <span class="mx-2">:</span>
+            <span id="score-o">0</span>
+            <img src="Images/cheatosO.png" alt="O" />
+          </div>
+        </div>
+        <div class="status mb-3" id="status">תור השחקן: X</div>
+      </div>
+
+      <div class="game-board">
+        <div class="row g-2" id="board"></div>
+      </div>
+
+      <div class="text-center mt-4">
+        <div class="mb-3">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gameMode" id="twoPlayers" value="two_players" checked />
+            <label class="form-check-label" for="twoPlayers">שני שחקנים</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gameMode" id="vsComputer" value="vs_computer" />
+            <label class="form-check-label" for="vsComputer">נגד המחשב</label>
+          </div>
+        </div>
+        <button class="btn btn-warning" onclick="game.resetGame()">משחק חדש</button>
+        <button class="btn btn-danger ms-2" onclick="game.resetScore()">איפוס ניקוד</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+    
+  </body>
+</html>

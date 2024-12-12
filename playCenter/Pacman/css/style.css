@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #1a1a1a;
+        color: #ffffff;
+        font-family: "Heebo", sans-serif;
+        padding: 1.25rem;
+      }
+      .game-title {
+        font-family: "Press Start 2P", cursive; /* פונט רטרו/משחקים */
+        font-size: 48px;
+        color: #ffd700; 
+        text-shadow: 2px 2px #000;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      }
+      .game-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        gap: 1.25rem;
+      }
+
+      .score-container {
+        font-size: 1.75rem;
+        color: #ffd700;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+
+      .power-timer {
+        font-size: 1.25rem;
+        color: #00ff00;
+        visibility: hidden;
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      }
+
+      .game-container {
+        position: relative;
+        border: 2px solid #00f;
+        border-radius: 0.625rem;
+        background: black;
+        box-shadow: 0 0 30px rgba(0, 0, 255, 0.5);
+      }
+
+      canvas {
+        display: block;
+        border-radius: 0.5rem;
+      }
+
+      .message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.25rem 2.5rem;
+        border-radius: 0.625rem;
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-align: center;
+        min-width: 300px;
+        border: none;
+        z-index: 1000; /* להבטיח שההודעה תופיע מעל המשחק */
+        direction: rtl;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      }
+      .message.victory-message {
+        background: rgba(0, 255, 0, 0.9);
+      }
+      .message.game-over-message {
+        background: rgba(200, 0, 0, 0.95);
+      }
+      .message h2 {
+        color: #ffffff;
+        margin-bottom: 1.25rem;
+      }
+
+      .btn-play-again {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.125rem;
+        margin-top: 1.25rem;
+        cursor: pointer;
+        background: #ffffff;
+        border: none;
+        border-radius: 0.3125rem;
+        color: black;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      .btn-play-again:hover {
+        background: #eee;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 480px) {
+        .game-wrapper {
+          padding: 0.5rem;
+        }
+        .message {
+          width: 90%;
+          padding: 1rem;
+          font-size: 1.25rem;
+        }
+      } /*# sourceMappingURL=main.css.map */
+
+      .message.start-message {
+        background: rgba(0, 0, 255, 0.9);
+      }
+   

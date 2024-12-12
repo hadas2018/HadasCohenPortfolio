@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>רשימת קניות</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container px-4 py-5">
+      <h3 class="display-4 text-secondary text-center mb-4">
+        PR<i class="fa-solid fa-cart-shopping"></i>DUCTS
+      </h3>
+
+      <div class="card shadow">
+        <div class="card-body">
+          <form id="product-form" class="mb-4">
+            <div class="row g-3">
+              <div class="col-12 col-sm-6 col-md-3">
+                <label class="form-label">שם המוצר</label>
+                <input
+                  type="text"
+                  id="product-name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <label class="form-label">מחיר ליחידה</label>
+                <input
+                  type="number"
+                  id="product-price"
+                  class="form-control"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <label class="form-label">כמות</label>
+                <input
+                  type="number"
+                  id="product-quantity"
+                  class="form-control"
+                  min="1"
+                  value=""
+                  required
+                />
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 d-flex align-items-end">
+                <button
+                  type="submit"
+                  id="add-button"
+                  class="btn btn-primary w-100"
+                  disabled
+                >
+                  הוסף
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>שם</th>
+                  <th>מחיר ליחידה</th>
+                  <th>כמות</th>
+                  <th>סה"כ</th>
+                  <th>פעולות</th>
+                </tr>
+              </thead>
+              <tbody id="product-list"></tbody>
+            </table>
+          </div>
+
+          <div
+            class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3 mt-4"
+          >
+            <h3 class="h4 mb-0">סכום כולל: ₪<span id="totalPrice">0</span></h3>
+            <div class="d-flex gap-2">
+              <button id="share-whatsapp" class="btn btn-success">
+                שתף בוואטסאפ
+                <i class="fab fa-whatsapp me-1"></i>
+              </button>
+              <button id="clear-list" class="btn btn-danger">נקה רשימה</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for clearing list confirmation -->
+
+    <div class="modal fade" id="clearConfirmModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+
+            <h5
+              class="modal-title font-weight-bold"
+              id="clearConfirmModalLabel"
+            >
+              אישור מחיקת נתונים
+            </h5>
+          </div>
+
+          <div class="modal-body">
+            <p>האם אתה בטוח שברצונך לנקות את הרשימה?</p>
+
+            <p class="text-danger">
+              שים לב! פעולה זו תמחק את כל המידע הקשור לרשימה ולא ניתן יהיה לשחזר
+              אותו. האם ברצונך להמשיך?
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              ביטול
+            </button>
+
+            <button type="button" class="btn btn-danger" id="confirmClear">
+              כן, מחק הכל
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  </body>
+</html>

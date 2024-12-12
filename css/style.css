@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 body {
@@ -310,6 +311,54 @@ textarea {
   color: #f88e43;
   padding: 20px 10px;
   border-bottom: 3px solid #f88e43;
+}
+
+/* ply center*/
+#projects {
+  background-color: rgba(255, 119, 22, 0.2509803922);
+}
+
+.project-card {
+  /* גודל קבוע לכרטיסייה */
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.project-box {
+  /* גודל קבוע לקופסת התמונה */
+  aspect-ratio: 1/1; /* יחס רוחב-גובה קבוע של 1:1 */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-color: white;
+  border-radius: 30px 0px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-box:hover {
+  transform: translateY(-5px);
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* שומר על יחסי התמונה ומכסה את כל השטח */
+  border-radius: 4px;
+}
+
+.project-title {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

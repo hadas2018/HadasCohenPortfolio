@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>מערכת הרשמה והתחברות</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main  class="container">
+        <!-- Registration Form -->
+        <div class="form-container" id="registrationForm">
+            <div class="logo">
+                <div class="title">הר-אל</div>
+                <div class="subtitle">שכר, נוכחות ומשאבי אנוש</div>
+                <div class="orange-circle"></div>
+            </div>
+
+            <h4 class="text-center mb-4">הרשמה למערכת</h4>
+
+            <div class="alert alert-danger" id="registrationError"></div>
+            <div class="alert alert-success" id="registrationSuccess"></div>
+
+            <form id="registerForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="fullName" placeholder="שם מלא" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="regIdNumber" placeholder="תעודת זהות" required>
+                    <div class="form-text">9 ספרות, ללא מקף</div>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" id="phone" placeholder="טלפון נייד" required>
+                    <div class="form-text">מספר טלפון ישראלי תקין</div>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="דואר אלקטרוני" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="regPassword" placeholder="סיסמא" required>
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div id="strengthBar"></div>
+                        </div>
+                        <div class="form-text" id="passwordStrengthText">
+                          הסיסמא חייבת להכיל לפחות 8 תווים, אות גדולה, אות קטנה, מספר וסימן מיוחד
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="אימות סיסמא" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" required>
+                    <label class="form-check-label" for="terms">
+                        אני מאשר/ת את <a href="#" onclick="showTerms(event)">תנאי השימוש</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn" id="registerBtn">
+                    <span>הרשמה</span>
+                    <div class="spinner-border spinner-border-sm loading-spinner" id="registerSpinner">
+                        <span class="visually-hidden">טוען...</span>
+                    </div>
+                </button>
+
+                <div class="text-center mt-3">
+                    <a href="#" class="text-decoration-none" id="showLoginLink">כבר רשום? לחץ כאן להתחברות</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <section  class="form-container" id="loginForm">
+            <header  class="logo">
+                <h1 class="title">הר-אל</h1>
+                <p class="subtitle">שכר, נוכחות ומשאבי אנוש</p>
+                <div class="orange-circle"></div>
+            </header >
+
+            <div class="login-type-toggle">
+                <button class="active" id="smsBtn">****<br/>סיסמא</button>
+                <button id="passwordBtn">SMS</button>
+            </div>
+
+            <div class="alert alert-danger" id="loginError"></div>
+            <div class="alert alert-success" id="loginSuccess"></div>
+
+            <form id="loginFormElement">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="loginIdNumber" placeholder="מספר זהות" required>
+                </div>
+                <div class="mb-3" id="passwordField">
+                    <input type="password" class="form-control" id="loginPassword" placeholder="סיסמא" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">זכור אותי</label>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn" id="loginBtn">
+                    <span>התחברות</span>
+                    <div class="spinner-border spinner-border-sm loading-spinner" id="loginSpinner">
+                        <span class="visually-hidden">טוען...</span>
+                    </div>
+                </button>
+
+                <nav class="text-center mt-3">
+                    <a href="#" class="text-decoration-none" id="forgotPassword">שכחת סיסמא?</a>
+                </nav>
+            </form>
+
+            <nav class="text-center mt-3">
+                <a href="#" class="text-decoration-none" id="showRegisterLink">חדש במערכת? לחץ כאן להרשמה</a>
+            </nav>
+        </section>
+
+        <!-- Admin Section -->
+        <section class="admin-section" id="adminSection">
+            <h3 class="text-center mb-4">ניהול משתמשים</h3>
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>שם מלא</th>
+                        <th>תעודת זהות</th>
+                        <th>טלפון</th>
+                        <th>אימייל</th>
+                        <th>פעולות</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Terms Modal -->
+    <dialog  class="modal" id="termsModal">
+        <div class="modal-content">
+            <h4>תנאי שימוש</h4>
+            <div class="modal-body">
+                <p>תנאי השימוש של המערכת...</p>
+            </div>
+            <button class="btn btn-primary" onclick="closeTerms()">סגור</button>
+        </div>
+    </dialog >
+
+    <!-- Password Reset Modal -->
+    <dialog  class="modal" id="passwordResetModal">
+        <div class="modal-content">
+            <h4>שחזור סיסמא</h4>
+            <form id="passwordResetForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="resetIdNumber" placeholder="תעודת זהות" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="resetEmail" placeholder="דואר אלקטרוני" required>
+                </div>
+                <button type="submit" class="btn btn-primary">שלח קוד אימות</button>
+                <button type="button" class="btn btn-secondary" onclick="closePasswordReset()">ביטול</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

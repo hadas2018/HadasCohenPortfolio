@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- 
+    ╦ ╦╔═╗
+    ╠═╣╠.╣
+    ╩ ╩╚ ╝ -->
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>לומדת חשבון</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="math-bg">
+    <main class="container mt-5">
+      <header class="mb-4">
+        <div class="header-container mb-3">
+          <h1 class="text-center mb-3 me-4">משחק ללימודי חשבון</h1>
+          <div class="score-display">
+            <span class="score-label">ניקוד נוכחי</span>
+            <span id="currentScore" class="score-number">0</span>
+          </div>
+        </div>
+        <p class="text-center mx-auto" style="max-width: 800px">
+          ברוכים הבאים למשחק לימוד החשבון! בחרו את ההגדרות הרצויות ולחצו על
+          "התחל משחק" כדי להתחיל. פתרו את התרגילים ובדקו את תשובותיכם. בהצלחה!
+        </p>
+      </header>
+
+      <div class="flex-container">
+        <section id="gameArea" class="card mt-4" style="display: none">
+          <div class="card-body">
+            <h5 class="card-title">פתור את התרגיל</h5>
+            <div
+              class="d-flex justify-content-center align-items-center my-4"
+              style="direction: ltr"
+            >
+              <span id="problem" class="h3 mx-2"></span>
+              <span class="h3 mx-2">=</span>
+              <input
+                type="number"
+                id="answer"
+                class="form-control w-25 fs-6"
+                placeholder="תשובה"
+                step="0.01"
+              />
+            </div>
+            <div class="text-center">
+              <div id="result" class="mt-2 mb-2"></div>
+              <button
+                id="checkAnswer"
+                class="btn btn-success"
+              >
+                בדוק תשובה
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="optionsArea" class="card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">אפשרויות משחק</h5>
+            <div class="mb-3">
+              <label for="maxNumber" class="form-label">בחר טווח מספרים:</label>
+              <select
+                id="maxNumber"
+                class="form-select"
+              >
+                <option value="10">1-10</option>
+                <option value="100">1-100</option>
+                <option value="1000">1-1000</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="operation" class="form-label">בחר פעולה:</label>
+              <select id="operation" class="form-select">
+                <option value="+">חיבור</option>
+                <option value="-">חיסור</option>
+                <option value="*">כפל</option>
+                <option value="/">חילוק</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="complexity" class="form-label">בחר מורכבות:</label>
+              <select
+                id="complexity"
+                class="form-select"
+              >
+                <option value="simple">פשוטה</option>
+                <option value="complex">מורכבת</option>
+              </select>
+            </div>
+            <button
+              id="startGame"
+              class="btn btn-primary"
+            >
+              התחל משחק
+            </button>
+            <button
+              id="resetGame"
+              class="btn btn-danger ms-2"
+            >
+              אפס משחק
+            </button>
+          </div>
+        </section>
+
+        <section id="resultsArea" class="card mt-4" style="display: none">
+          <div class="card-body">
+            <h5 class="card-title">תוצאות</h5>
+            <table class="table table-striped" style="direction: ltr">
+              <thead>
+                <tr>
+                  <th>ניקוד</th>
+                  <th>פתרון נכון</th>
+                  <th>תשובת המשתמש</th>
+                  <th>תרגיל</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody"></tbody>
+              <tfoot>
+                <tr>
+                  <td id="totalScore">0</td>
+                  <td colspan="3" class="text-end">
+                    <strong>:סה"כ ניקוד</strong>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+      </div>
+      <section
+        class="modal fade"
+        id="resetConfirmModal"
+        tabindex="-1"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="resetConfirmModalLabel">
+                אישור מחיקת נתונים
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>האם אתה בטוח שברצונך למחוק את כל הנתונים והתוצאות?</p>
+              <p class="text-danger">שים לב: פעולה זו אינה ניתנת לביטול!</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                ביטול
+              </button>
+              <button type="button" class="btn btn-danger" id="confirmReset">
+                כן, מחק הכל
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

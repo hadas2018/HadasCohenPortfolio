@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק זיכרון פוקימון</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    
+</head>
+<body>
+    <audio id="victorySound" preload="auto">
+        <source src="saunds/victorySound.wav" type="audio/mpeg">
+    </audio>
+    <audio id="matchSound" preload="auto">
+        <source src="saunds/matchSound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="timeUpSound" preload="auto">
+        <source src="saunds/TimeUpSound.wav" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1 class=" text-primary text-center mb-4">משחק זיכרון פוקימון</h1>
+        <div class="controls d-flex justify-content-center align-items-center gap-2 gap-md-3 mb-4">
+            <select id="cardCount">
+                <option value="">בחר כמות כרטיסים</option>
+                <option value="6">6 כרטיסים</option>
+                <option value="12">12 כרטיסים</option>
+                <option value="16">16 כרטיסים</option>
+                <option value="20">20 כרטיסים</option>
+                <option value="30">30 כרטיסים</option>
+            </select>
+            <select id="timeLimit">
+                <option value="30">30 שניות</option>
+                <option value="60">דקה</option>
+                <option value="120">2 דקות</option>
+                <option value="300">5 דקות</option>
+            </select>
+            <button id="startGame">התחל משחק</button>
+        </div>
+        <div class="hourglass-container d-flex justify-content-center align-items-center gap-4 mb-4">
+            <div class="hourglass">
+                <div class="top"></div>
+                <div class="bottom"></div>
+            </div>
+            <div id="timer" class="fs-1 fw-bold text-primary mb-0">00:00</div>
+        </div>
+        <div class="stats">
+            <div class="stat">ניקוד: <span id="score">0</span></div>
+            <div class="stat">ניסיונות: <span id="attempts">0</span></div>
+        </div>
+        <div id="gameBoard"></div>
+    </div>
+    <div class="alert" id="alert"></div>
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

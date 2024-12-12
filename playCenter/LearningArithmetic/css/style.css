@@ -1,0 +1,129 @@
+      @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+      body {
+        background-color: #f0f8ff;
+        font-family: "Heebo", sans-serif;
+      }
+      .input-error {
+        border-color: red;
+      }
+      .input-success {
+        border-color: green;
+      }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      p {
+        line-height: 1.6;
+        color: #333;
+      }
+      .score-display {
+        background: linear-gradient(135deg, #4a90e2, #357abd);
+        color: white;
+        border-radius: 15px;
+        padding: 15px 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 30px;
+        margin-right: auto;
+      }
+      .score-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        display: block;
+        text-align: center;
+      }
+      .score-label {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        display: block;
+        text-align: center;
+      }
+      #optionsArea {
+        order: 2;
+      }
+      #gameArea {
+        order: 1;
+      }
+      #resultsArea {
+        order: 3;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .modal-content {
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-header {
+        background-color: #f8f9fa;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .modal-footer {
+        background-color: #f8f9fa;
+        border-radius: 0 0 15px 15px;
+      }
+
+      .modal-body {
+        padding: 2rem;
+      }
+
+      .modal-body p {
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-body p.text-danger {
+        font-weight: bold;
+      }
+
+      .modal .btn {
+        padding: 0.5rem 1.5rem;
+        font-weight: 500;
+      }
+
+      .modal .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+      }
+
+      .modal .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+      }
+
+      .table th,
+      .table td {
+        vertical-align: middle;
+        padding: 0.5rem;
+      }
+      .table td:nth-child(1) {
+        width: 30%;
+      } /* עמודת ניקוד */
+      .table td:nth-child(2) {
+        width: 20%;
+      } /* עמודת פתרון נכון */
+      .table td:nth-child(3) {
+        width: 20%;
+      } /* עמודת תשובת משתמש */
+      .table td:nth-child(4) {
+        width: 30%;
+      } /* עמודת תרגיל */
+      @media (max-width: 768px) {
+        .table {
+          font-size: 0.85rem;
+        }
+        .card-body {
+          overflow-x: auto;
+        }
+
+        .table td:last-child {
+          white-space: nowrap;
+          max-width: 150px;
+        }
+      }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>תחזית מזג אוויר</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="content-wrapper">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <section class="weather-card p-4">
+                <header class="text-center">
+                  <h1 class="text-center mb-2">תחזית מזג אוויר</h1>
+                  <time
+                    id="current-date"
+                    class="text-center date-display"
+                    datetime=""
+                  ></time>
+                </header>
+
+                <form
+                  class="search-form mb-4"
+                  id="weatherForm"
+                >
+                  <div class="input-group mb-3">
+                    <label for="cityInput"
+                      >הכנס שם עיר</label
+                    >
+                    <input
+                      type="text"
+                      id="cityInput"
+                      class="form-control"
+                      placeholder="הכנס שם עיר..."
+                      required
+                    />
+
+                    <button
+                      class="btn btn-primary"
+                      type="submit"
+                    >
+                      <span class="material-icons-round"
+                        >search</span
+                      >
+                      <span class="btn-text">חפש</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btn btn-clear"
+                      id="clearInput"
+                    >
+                      <span class="material-icons-round"
+                        >close</span
+                      >
+                      <span class="btn-text">נקה</span>
+                    </button>
+                  </div>
+
+                  <div class="date-picker">
+                    <label for="datePicker"
+                      >בחר תאריך</label
+                    >
+                    <input
+                      type="date"
+                      id="datePicker"
+                      class="form-control mx-auto"
+                    />
+                    <p class="date-info">
+                      ניתן לצפות בתחזית עד 5 ימים קדימה
+                    </p>
+                  </div>
+                </form>
+
+                <div
+                  id="selected-date"
+                  class="text-center mb-3 fw-bold"
+                ></div>
+                <section
+                  id="weather-info"
+                  class="text-center"
+                >
+                  <div class="alert alert-info">
+                    אנא הזן שם עיר לקבלת מזג האוויר
+                  </div>
+                </section>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
